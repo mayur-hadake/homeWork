@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation</title>
+    <script>
+      var fname =true;
+      var lname =true;
+      var mno =true;
+      function msg(){
+        var fname= document.getElementById("firstName").value.trim();
+        var lname= document.getElementById("lastName").value.trim();
+        var mno= document.getElementById("mobno").value.trim();
+        validName=/^[A-Za-z]$/;
+        validMobNo=/^[0-9]*$/;
+        console.log(fname);
+        console.log(lname);
+        console.log(mno);
+        
+        if(fname=="")
+        {
+          fname=false;
+          alert("First name is not null");
+          console.log("First name is not null");
+        }
+        else if(!validName.test(fname)){
+          fname=false;
+          alert("First name is only string");
+        }
+        if(lname=="")
+        {
+          lname=false;
+          alert("Last name is not null");
+          console.log("Last name is not null");
+        }
+        else if(!validName.test(lname)){
+          lname=false;
+          alert("Last name is only string");
+        }
+        if(mno=="")
+        {
+          mno=false;
+          alert("Mobile Number is not null");
+          console.log("Mobile Number is not null");
+        }
+        else if(!validMobNo.test(mno)){
+          mno=false;
+          alert("Mobile Number is only number");
+          console.log("Mobile Number is only number");
+        }
+        else if(mno.length>=10){
+          mno=false;
+          alert("Mobile Number is only 10 digit");
+          console.log("Mobile Number is only 10 digit");
+        }
+        else if(mno.length<=10){
+          mno=false;
+          alert("Mobile Number required 10 digit");
+          console.log("Mobile Number required 10 digit");
+        }
+        if(fname=="true" && lname=="true" && mno==true){
+          alert("All data valid");
+        }
+      }
+      
+
+    </script>
+    <div class="row">
+      <b>Enter First Name</b>
+    </div>
+    <div class="column">
+      <input type="text" placeholder="Enter your first name" id="firstName"></input>
+      <div id="err"></div>
+    </div>
+    <div class="row">
+      <b>Enter Last Name</b>
+    </div>
+    <div class="column">
+      <input type="text" placeholder="Enter your Last name" id="lastName"></input>
+      <div id="err"></div>
+    </div>
+    <div class="row">
+      <b>Enter Mobile No</b>
+    </div>
+    <div class="column">
+      <input type="text" placeholder="Enter your Mobile No" id="mobno"></input>
+      <div id="err"></div>
+    </div>
+    <div class="row">
+      <input type="button" value="Submit" onclick="msg()" />
+    </div>
+  </head>
+  <body></body>
+</html>
